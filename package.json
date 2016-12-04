@@ -1,0 +1,21 @@
+{
+  "name": "boiler",
+  "description": "harpjs boilerplate",
+  "author": {
+    "name": "Matthias Jordan",
+    "url": "https://github.com/iammatthias/boiler"
+  },
+  "license" : "MIT",
+  "copyright" : "Copyright © Matthias Jordan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iammatthias/boiler"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "harp": "^0.21.0"
+  },
+  "scripts": {
+    "test": "echo \"meep morp\""
+  }
+}

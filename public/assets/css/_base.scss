@@ -1,0 +1,145 @@
+  /* Colors */
+  $bg: #FDFDFD;
+  $navy: #001F3F;
+  $blue: #0074D9;
+  $aqua: #7FDBFF;
+  $teal: #39CCCC;
+  $olive: #3D9970;
+  $green: #2ECC40;
+  $lime: #01FF70;
+  $gold: #FFDC00;
+  $orange: #FF851B;
+  $red: #FF4136;
+  $fuchsia: #F012BE;
+  $purple: #B10DC9;
+  $maroon: #85144B;
+  $white: #FFFFFF;
+  $silver: #DDDDDD;
+  $gray: #555555;
+  $black: #111111;
+
+html {
+  font-size: 15px;
+}
+
+body {
+  margin: 40px auto;
+  width: 66.6%;
+  line-height: 1.6;
+  color: $gray;
+  background: $bg;
+  padding: 0 10px;
+}
+
+h1 {
+  font-weight: 400;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+h2 {
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 2.1rem;
+  margin-bottom: 0;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+p, ol, ul {
+  font-size: 1.4rem;
+}
+
+p {
+  line-height: 2rem;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0;
+  vertical-align: baseline;
+  &.subtitle {
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    display: block;
+    line-height: 1;
+  }
+}
+
+mark {
+  background-color: $gold;
+}
+
+article {
+  position: relative;
+}
+
+img, canvas, iframe, video, svg, select, textarea {
+  max-width: 100%;
+}
+
+img {
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+img:hover {
+  opacity: .75;
+}
+
+/*header*/
+
+header {
+  position: relative;
+  padding: 2.5rem 0rem;
+}
+
+/*sticky footer*/
+
+.Site {
+  display: flex;
+  min-height: 90vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
+footer {
+  font-size: .8rem;
+}
+
+/* Links: replicate underline that clears descenders */
+
+a {
+  -webkit-transition: color .4s;
+  transition: color .4s;
+  color: $navy;
+  &:link, &:visited {
+    color: $navy;
+  }
+  &:hover {
+    color: $aqua;
+  }
+  &:active {
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    color: $blue;
+  }
+}
+
+.link {
+  text-decoration: none;
+}

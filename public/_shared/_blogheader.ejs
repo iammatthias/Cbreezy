@@ -1,0 +1,6 @@
+<header>
+<% for(var slug in public.posts._data){ %>
+  <h1><a href="/posts/<%= slug %>"><%= blogtitle %></a></h1>
+  <h3>- <%= blogslug %></h3>
+<% }; %>
+</header>
