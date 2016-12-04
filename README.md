@@ -1,10 +1,12 @@
-# Boiler: A HarpJS Boilerplate
+# C Breezy
 
-https://travis-ci.org/iammatthias/boiler
+1 Part Live Production Demo of Boiler, 1 Part Cooking Blog
+
+## Boiler: A HarpJS Boilerplate
 
 Boiler is a [HarpJS](http://harpjs.com) boilerplate, with partials, blog posts, and minimal CSS. It is meant to provide a basic set-up for a static HarpJS blog that can be hosted anywhere you choose(your own VPS, Amazon S3, Netlify, Surge, Github Pages, etc.) Bits of the CSS use [Colors](http://clrs.cc), and [Fluidity](http://fluidity.sexy) from [MRMRS](http://mrmrs.cc).
 
-## Installation
+### Installation
 ```
 $ sudo npm install -g harp
 
@@ -14,7 +16,7 @@ $ cd boiler
 
 $ harp server
 ```
-## Usage
+### Usage
 
 HarpJS is a static web server with built-in preprocessing. It's pretty nifty. Generally when you use Harp, and first run `harp init myproject` you get this:
 
