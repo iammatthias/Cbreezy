@@ -9,21 +9,18 @@ const query = graphql`
     }
     companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
       name
-      address1
-      address2
-      zipCode
       city
       country
     }
   }
 `
 
-function LayoutContainer (props) {
+function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false)
-  function handleShowNav () {
+  function handleShowNav() {
     setShowNav(true)
   }
-  function handleHideNav () {
+  function handleHideNav() {
     setShowNav(false)
   }
   return (

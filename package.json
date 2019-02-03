@@ -1,8 +1,8 @@
 {
   "private": false,
-  "name": "example-company-website-gatsby-sanity-combo",
+  "name": "c-breezy",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "Matthias Jordan <me@iammatthias.com>",
   "scripts": {
     "clean": "lerna clean",
     "deploy": "lerna run deploy",
