@@ -1,80 +1,124 @@
-# C Breezy
+# A sample company website built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.io)
 
-1 Part Live Production Demo of Boiler, 1 Part Cooking Blog
+This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website. Read [the blog post](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content) and [see the getting started video](https://www.youtube.com/watch?v=qU4lFYp3KiQ).
 
-## Boiler: A HarpJS Boilerplate
+- [Features](#features)
+- [Installation](#installation)
+- [Enable Gatsby watch mode for drafts](#enable-gatsby-watch-mode-for-drafts)
+- [Usage example](#usage-example)
+- [Development setup](#development-setup)
+  - [Run it](#run-it)
+  - [Development workflow](#development-workflow)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-Boiler is a [HarpJS](http://harpjs.com) boilerplate, with partials, blog posts, and minimal CSS. It is meant to provide a basic set-up for a static HarpJS blog that can be hosted anywhere you choose(your own VPS, Amazon S3, Netlify, Surge, Github Pages, etc.) Bits of the CSS use [Colors](http://clrs.cc), and [Fluidity](http://fluidity.sexy) from [MRMRS](http://mrmrs.cc).
+[![Watch a video about the company website built with Gatsby using Sanity.io as a headless CMS](https://cdn.sanity.io/images/3do82whm/production/4f652e6d114e7010aa633b81cbcb97c335980fc8-1920x1080.png?w=500)](https://www.youtube.com/watch?v=STtpXBvJmDA)
 
-### Installation
-```
-$ sudo npm install -g harp
+[See the example up and running](https://www.youtube.com/watch?v=STtpXBvJmDA)
 
-$ git clone https://github.com/iammatthias/Boiler.git
+## Features
 
-$ cd boiler
+**A company website built with Gatsby**
+  * 📡 Real-time content preview in development
+  * ⏱ Fast & frugal builds
+  * 🗃 No accidental missing fields/types
+  * 🧰 Full Render Control with Portable Text
+  * 📸 gatsby-image support
+  * 🔧 Minimal configuration
 
-$ harp server
-```
-### Usage
+**Sanity Studio with a schema for**
+  * 🏢 Company info
+  * 📃 Pages
+  * 👨🏼‍🎨 Projects
+  * 👩🏾‍💻 People
+  * 📰 Blog posts
 
-HarpJS is a static web server with built-in preprocessing. It's pretty nifty. Generally when you use Harp, and first run `harp init myproject` you get this:
+## Installation
 
-```
-myproject/
-  |- _layout.jade
-  |- 404.jade
-  |- index.jade
-  +- main.less
-```
+Read the [step-by-step blog post](https://www.sanity.io/blog/how-to-quickly-set-up-a-gatsby-js-jamstack-website-with-a-headless-cms).
 
-There is nothing really wrong with that, but there is a better way. Here is what Boilerplate starts with:
+```sh
+git clone git@github.com:sanity-io/example-company-website-gatsby-sanity-combo.git
+cd example-company-website-gatsby-sanity-combo
+npm install
 
-```
-boiler/
-  |- /public
-  |-- /_shared
-  |--- _head.ejs
-  |--- _header.ejs
-  |--- _footer.ejs
-  |-- /assets
-  |--- /css
-  |--- /js
-  |-- /posts
-  |-- _data.json
-  |-- _layout.ejs
-  |-- CNAME
-  |-- 404.ejs
-  |-- index.ejs
-  |- .bowerrc
-  |- .travis.yml
-  |- harp.json
-  |- package.json
-  |- /readme
+# Install or upgrade the Sanity CLI to
+# make sure you are on v0.140.0 or higher
+npm install -g @sanity/cli
+# Set up Sanity,io account and project (≈ 45s)
+npm run init
+
 ```
 
-Woah. That's quite a bit different from the basic 'harp init' structure. Let's walk through it.
+See the [getting started video](https://www.youtube.com/watch?v=qU4lFYp3KiQ) for a walkthrough of the installation.
 
-Everything lives in the project folder `/boiler/`. Within `/boiler/` you'll find a few extra files.
-  - `.bowerrc` makes sure all your Bower components end up in /public/assets/vendor.
-  - `.travis.yml` file to serve as a basic configuration for Travis CI that will build your HarpJS app/site, and deploy it to Surge. Loads Harp and Surge from the NPM dev-dependencies.
-  - The CNAME file in /public tells Surge to publish to your `your-own-domain.com` instead of `your-own-domain.surge.sh`. For more information on setting up Travis CI with Surge, please check Surge's documentation: https://surge.sh/help/integrating-with-travis-ci
+## Enable Gatsby watch mode for drafts
 
-![travis ci screenshot](https://i.imgur.com/OmCQ3Xc.png)
+We have enabled the watch mode in the `gatsby-source-sanity` plugin, which means that your frontend will automatically update with content changes whenever you publish them. If you want the frontend to show content changes in real time, you must do the following:
 
-Deploying with Surge is really fast, and really painless. It's a pretty great service. And since this boilerplate is all simple static files, it weighs in at less than Bootstrap.
+* Go to [manage.sanity.io](https://manage.sanity.io) and find your project (or run the command `sanity manage` in the studio folder)
+* Navigate to Settings->API and scroll down to the **Tokens** section
+* Add a new token and give it **read** privileges.
+* Copy the `.env-example` file to a file called `.env` in the `/web` folder
+* Add your new token to the key: `SANITY_TOKEN="<token here>"`
 
-The main files you need to worry about here are `harp.json` and `package.json`.
-  - `harp.json` contains all global metadata for your site.
-  - `package.json` should be familiar to anyone who uses NPM.
+If you restart the local development server, it will now show unpublished changes from the Studio. Note that the `.env` file is ignored by Git, because the token gives access to unpublished content in the API.
 
-Now onto the 'public' folder. This is where your app/site lives! There are partials in the `_shared` folder that control your sites head, header, and footer. Feel free to add your own for different content types. The `assets` folder contains your CSS and vendor files, and makes a nice home for your media assets as well. `posts` is home to any blog posts your might right.
+## Usage example
 
-The '_layout.ejs' file is a common template that includes all content except for one main content area. You can think of a Layout as the inverse of a partial. Often sites and apps will have common headers and footers and the only area that needs to change is the body. That is where `index.ejs` comes in! You can really put any content you want in here, but it is currently an EJS script that lists the slugs from the different blog posts.
+This project demos Sanity.io with Gatsby using our [source plugin](https://www.gatsbyjs.org/packages/gatsby-source-sanity). It's a good starter for a simple company site, a portfolio site for an agency or a personal blog with an attached portfolio.
 
-## Credits
+We tried to strike a balance between a useful example and a minimal footprint to make it easier to iterate on design and content model. [Let us know](https://slack.sanity.io) should you have questions!
 
-* [HarpJS](http://harpjs.com)
-* [mrmrs](http://mrmrs.cc)
+## Development setup
 
-Demo hosted using [Surge](https://surge.sh) and Travis CI.
+### Run it
+
+```sh
+npm start
+# Studio at http://localhost:3000
+# Web frontend at http://localhost:8000
+# GraphiQL explorer at http://localhost:8000/___graphql
+```
+
+
+
+
+### Development workflow
+
+We wrote a [blog post](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content) about how to use this example, but if you would like to just start tinkering:
+
+- The Sanity Studio keeps its schemas in `./studio/schemas`. We will hot reload the editor when you edit them so just start experimenting. [Read more about our schemas here](https://www.sanity.io/docs/content-studio/the-schema).
+- We followed Gatsby conventions and [you can read all about them here](https://www.gatsbyjs.org/tutorial/).
+- If you want Gatsby to not throw errors on missing fields for unpopulated data you need to redeploy the GraphQL API so we can generate schemas – `sanity graphql deploy`
+
+
+## Deployment
+
+```sh
+# Deploy a GraphQL API and schema to Sanity
+npm run graphql-deploy
+
+# Deploy the Sanity Studio to *.sanity.studio
+npm run sanity-deploy
+
+# Build & deploy to Zeit's Now
+npm run now-deploy
+```
+
+> **Deploy on Netlify:** If you want to deploy the Gatsby site to Netlify we added a netlify.toml config for you.
+>
+> Fork or clone the example to your GitHub account. After adding your repo to Netlify you’ll get automatic builds & deploys when pushing to master. You can also add a [webhook](link-to-the-doc) to get deploys on content changes.
+
+## Contributing
+
+1. [Fork it](https://https://github.com/sanity-io/example-company-website-gatsby-sanity-combo/fork)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+## License
+
+MIT
