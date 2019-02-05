@@ -20,5 +20,8 @@
   "devDependencies": {
     "lerna": "^3.9.0",
     "rimraf": "^2.6.3"
-  }
+  },
+  "resolutions": {
+  "terser": "3.14.1"
+ }
 }
