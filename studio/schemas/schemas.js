@@ -15,7 +15,6 @@ import page from "./page";
 import person from "./person";
 import post from "./post";
 import postAuthor from "./postAuthor";
-
 import siteSettings from "./siteSettings";
 import slideshow from "./slideshow";
 
@@ -38,7 +37,6 @@ export default createSchema({
     person,
     post,
     postAuthor,
-
     siteSettings,
     slideshow
 

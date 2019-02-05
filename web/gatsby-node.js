@@ -31,13 +31,13 @@ async function createBlogPostPages(graphql, actions, reporter) {
   postEdges.forEach((edge, index) => {
     const { id, slug = {}, publishedAt } = edge.node
     const dateSegment = format(publishedAt, 'YYYY/MM')
-    const path = `/recipes/${dateSegment}/${slug.current}/`
+    const path = `/blog/${dateSegment}/${slug.current}/`
 
-    reporter.info(`Creating recipe page: ${path}`)
+    reporter.info(`Creating blog post page: ${path}`)
 
     createPage({
       path,
-      component: require.resolve('./src/templates/recipe.js'),
+      component: require.resolve('./src/templates/blog-post.js'),
       context: { id }
     })
 

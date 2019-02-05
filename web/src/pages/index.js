@@ -68,6 +68,9 @@ const IndexPage = props => {
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
+  const projectNodes = (data || {}).projects
+    ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
+    : []
 
   if (!site) {
     throw new Error(
@@ -80,12 +83,11 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
-
         {postNodes && (
           <BlogPostPreviewGrid
-            title="Latest recipes"
+            title="Latest blog posts"
             nodes={postNodes}
-            browseMoreHref="/recipes/"
+            browseMoreHref="/blog/"
           />
         )}
       </Container>

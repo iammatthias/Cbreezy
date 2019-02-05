@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "C-Breezy"
+    "name": "Gatsby Demo"
   },
   "plugins": [
     "@sanity/base",

@@ -1,8 +1,8 @@
 {
   "private": false,
-  "name": "c-breezy",
+  "name": "example-company-website-gatsby-sanity-combo",
   "version": "1.0.0",
-  "author": "Matthias Jordan <me@iammatthias.com>",
+  "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "clean": "lerna clean",
     "deploy": "lerna run deploy",
@@ -18,7 +18,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "lerna": "^3.10.8",
+    "lerna": "^3.9.0",
     "rimraf": "^2.6.3"
   }
 }
