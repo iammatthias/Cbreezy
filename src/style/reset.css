@@ -125,19 +125,50 @@ body:not(.user-is-tabbing) a:focus {
   outline: none;
 }
 
-/* Copy */
+/* General */
+
+@import url('https://fonts.googleapis.com/css?family=Baskervville|Raleway&display=swap');
+
+:root {
+  --base100: #fff5f0;
+  --base200: #ffebe1;
+  --base300: #ffe1d2;
+  --base400: #ffd7c3;
+  --base500: #ffccb4;
+  --base600: #ffc1a4;
+  --base700: #ffb795;
+  --base800: #ffac85;
+  --base900: #fda176;
+  --secondary: #FD4A1F;
+  --tertiary: #73D6F5;
+  --accent: #58B185;
+  --black: #29241E;
+
+  --sans: 'Raleway', sans-serif;
+  --serif: 'Baskervville', serif;
+}
 
 html {font-size: 18px;}
 
 body {
   font-weight: 400;
   line-height: 1.618rem;
+  background: var(--base600);
+  color: var(--black)
 }
 
-p {margin-bottom: 1.25em;}
+hr {
+  border: 1px solid var(--accent);
+}
+
+p {
+    margin-bottom: 1.25em; 
+    font-family: var(--sans)
+  }
 
 h1, h2, h3, h4, h5 {
   margin: 2rem 0;
+  font-family: var(--serif)
 }
 
 h1 {

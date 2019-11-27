@@ -6,8 +6,7 @@ import Img from 'gatsby-image';
 import AspectRatioBox from './aspect-ratio-box';
 
 export const Title = styled(Heading)`
-  color: ${props => props.theme.colors.black};
-  font-family: ${props => props.theme.fonts.sans};
+  color: var(--black);
   font-weight: 600;
   font-size: ${props => props.theme.fontSizes[5]}px;
   margin: 0;
@@ -18,8 +17,7 @@ export const Title = styled(Heading)`
 `;
 
 export const Description = styled(Text)`
-  color: ${props => props.theme.colors.black};
-  font-family: ${props => props.theme.fonts.sans};
+  color: var(--black);
   font-weight: 600;
   font-size: ${props => props.theme.fontSizes[3]}px;
   line-height: 1.35em;
@@ -31,8 +29,7 @@ export const Description = styled(Text)`
 `;
 
 export const Category = styled(Text)`
-  color: ${props => props.theme.colors.grey};
-  font-family: ${props => props.theme.fonts.sans};
+  color: var(--black);
   font-size: ${props => props.theme.fontSizes[3]}px;
   font-weight: normal;
   margin: 0;
@@ -79,6 +76,7 @@ const RecipeHeader = ({ recipe, truncated }) => (
         </Box>
       </Box>
     </Flex>
+    <hr />
     <Hero photo={recipe.featuredPhoto} truncated={truncated} />
   </Box>
 );

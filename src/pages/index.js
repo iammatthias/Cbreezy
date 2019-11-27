@@ -12,12 +12,30 @@ const Grid = styled(Box)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: ${props => props.theme.space[3]}px;
+  border-top: 2px solid var(--accent);
+  padding-top: 16px;
+  a {
+    padding-right: 16px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      z-index: 100;
+      top: 0;
+      width: 2px;
+      height: 88.5%;
+      background: var(--accent);
+    }
+  }
 `;
 
 const RecipeGridItem = ({ recipe }) => {
   return (
     <AniLink
-      style={{ textDecoration: 'none' }}
+      style={{
+        textDecoration: 'none'
+      }}
       fade
       to={`/recipes/${recipe.publishYear}/${recipe.publishMonth}/${recipe.publishDay}/${recipe.slug}`}
       duration={0.2}

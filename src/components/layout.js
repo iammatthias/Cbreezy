@@ -6,25 +6,16 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import '../style/reset.css';
 
-import Logo from './logo.png';
+import Logo from './logo-v2.png';
 
 const theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256],
-  fonts: {
-    sans: 'system-ui, sans-serif'
-  },
-  fontSizes: [12, 14, 16, 20, 24, 32, 46],
-  colors: {
-    grey: '#999',
-    black: '#1a1a1a',
-    red: '#e61428'
-  }
+  fontSizes: [12, 14, 16, 20, 24, 32, 46]
 };
 
 export const Title = styled(Heading)`
-  color: ${props => props.theme.colors.black};
-  font-family: ${props => props.theme.fonts.sans};
+  color: var(--black);
   font-weight: 600;
   font-size: ${props => props.theme.fontSizes[5]}px;
   margin: 0;
@@ -51,7 +42,7 @@ const Layout = ({ children, transitionStatus }) => (
             to={`/`}
             duration={0.2}
           >
-            <Image src={Logo} alt="C Breezy" height={48} />
+            <Image src={Logo} alt="C Breezy" height={64} />
           </AniLink>
         </Box>
       </FadingHeader>
