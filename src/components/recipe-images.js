@@ -17,10 +17,10 @@ const RecipeContent = ({ photos }) => {
   useEffect(() => {
     (async function() {
       try {
-        mediumZoom('.gatsby-image-wrapper img', {
+        mediumZoom('div img', {
           margin: 64,
           background: 'var(--400)',
-          zIndex: '10'
+          zIndex: '100'
         });
       } catch (e) {
         console.error(e);
