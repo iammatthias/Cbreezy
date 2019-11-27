@@ -10,12 +10,13 @@ import Layout from '../components/layout';
 
 const Grid = styled(Box)`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns: 1fr;
   grid-gap: ${props => props.theme.space[3]}px;
   border-top: 2px solid var(--accent);
   padding-top: 16px;
   @media (min-width: ${props => props.theme.breakpoints[1]}) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
   a {
     padding-right: 16px;

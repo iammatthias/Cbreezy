@@ -17,7 +17,7 @@ const RecipeContent = ({ photos }) => {
   useEffect(() => {
     (async function() {
       try {
-        mediumZoom('img', {
+        mediumZoom('picture img', {
           margin: 64,
           background: 'var(--400)',
           zIndex: '10'
