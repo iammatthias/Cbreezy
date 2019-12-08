@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Box } from 'rebass';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 import AspectRatioBox from './aspect-ratio-box';
-
-import mediumZoom from 'medium-zoom';
 
 const Grid = styled(Box)`
   display: grid;
@@ -14,19 +12,6 @@ const Grid = styled(Box)`
 `;
 
 const RecipeContent = ({ photos }) => {
-  useEffect(() => {
-    (async function() {
-      try {
-        mediumZoom('div img', {
-          margin: 64,
-          background: 'var(--400)',
-          zIndex: '100'
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  });
   return (
     <Box my={4}>
       <Grid>
